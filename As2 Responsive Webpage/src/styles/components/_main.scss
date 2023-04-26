@@ -1,0 +1,266 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use "../variables/spaces";
+@use "../shared/images";
+@use "../mixins/grid" as gridmix;
+@use "../mixins/article" as articlemix;
+@use "../mixins/buttons" as buttonmix;
+@use "../mixins/animation" as animation;
+@use "../mixins/text" as textmix;
+@use "../mixins/blog" as blog;
+
+.vertical__text {
+  position: -webkit-sticky;
+  position: sticky;
+  transform-origin: -3%;
+  left: auto;
+  top: 70%;
+  transform: rotate(-90deg) 
+}
+.grid-1 {
+  @include gridmix.grid-styling;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: calc(55vh);
+  justify-content: space-around;
+  margin-bottom: 3vh;
+  $card: (1, 2, 3, 4, 5);
+  grid-template-areas:
+    "card1 card1 card2 card3"
+    "card1 card1 card4 card5";
+  & article:hover {
+    transform: translateY(-2%);
+  }
+  & h3 {
+    font-size: fonts.$h3-small;
+  }
+  & button {
+    @include buttonmix.buttons-light;
+  }
+  & article:nth-child(1) {
+    @include articlemix.article-style;
+    grid-area: card1;
+    background-image: url("https://i.postimg.cc/NsVKCJMv/shutterstock-2203334379.jpg");
+    background-size: images.$background-size;
+  }
+  & article:nth-child(2) {
+    @include articlemix.article-style;
+    grid-area: card2;
+    background-image: url("https://i.postimg.cc/Fsw-16vKx/bathroom.jpg"), linear-gradient(rgba(35, 27, 13, 0.5), rgba(35, 27, 13, 0.5));
+    background-blend-mode: overlay;
+    background-size: images.$background-size;
+  }
+  & article:nth-child(3) {
+    @include articlemix.dark-article-style;
+    grid-area: card3;
+    background-image: url("https://i.postimg.cc/cHDSMsKW/openspace.jpg"), linear-gradient(rgba(155, 155, 148, 0.9), rgba(50, 50, 48, 0.9));
+    background-blend-mode: overlay;
+    & button {
+      @include buttonmix.buttons-dark;
+    }
+  }
+  & article:nth-child(4) {
+    @include articlemix.article-style;
+    grid-area: card4;
+    background-image: url("https://i.postimg.cc/3xzQ3bTY/iewek-gnos-hh-Ux08-Pu-Ypc-unsplash-1024x768.jpg"), linear-gradient(rgba(74, 61, 47, 0.7), rgba(74, 61, 47, 0.7));
+    background-size: cover;
+    background-blend-mode: overlay;
+  }
+  & article:nth-child(5) {   
+    @include articlemix.dark-article-style;
+    grid-area: card5;
+    background-image: url("https://i.postimg.cc/mg54ZnKb/shutterstock-1615509904.jpg"), linear-gradient(rgba(67, 116, 117, 0.6), rgba(67, 116, 117, 0.6));
+    background-blend-mode: overlay;
+    background-size: cover;
+    & h3 {
+      color: colors.$dark-text;
+    } 
+    & button {
+      @include buttonmix.buttons-dark;
+  }
+ }
+}
+.grid1__card__text {
+  & h3 {
+    & p {
+      text-align: left;
+    }
+  }
+}
+
+.grid2__card__text, .grid3__card__text {
+    text-align: center;
+    margin-top: 5em;
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding: 1em;
+    margin-top: 1em;
+    margin-left: 8%;
+    margin-right: 8%;
+    justify-content: center;
+  & article {
+    @include animation.zoom-animation;
+  }
+}
+
+.blog1, .blog2, .blog3 {
+  @include blog.blog-images;
+  height: 50vh;
+  color: colors.$light-text;
+}
+.blog1 {
+  background-image: url("https://i.postimg.cc/b8Hrnk7Z/kitchen.jpg");
+}
+.blog2 {
+  background-image: url("https://i.postimg.cc/FrQZPwhb/shutterstock-437748019.jpg"), linear-gradient(rgba(101, 94, 34, 0.98), rgba(101, 94, 34, 0.98));
+  background-blend-mode: overlay;
+  & h3, sub {
+    color: colors.$dark-text;
+  }
+  & button {
+    @include buttonmix.buttons-dark;
+  }
+}
+.blog3 {
+  background-image: url("https://i.postimg.cc/qJ97xNbk/1870353346-huge.jpg");
+}
+
+.blog__content{
+  & h3 {
+    font-size: fonts.$blog-text;
+    & span {
+      font-size: 1.5em;
+      visibility: hidden;
+    }
+    &:hover {
+      & span {
+        font-size: 1.5em;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+.grid-2 {
+  @include gridmix.grid-styling;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 55vh;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  margin-left: 8%;
+  margin-right: 8%;
+  $card: (1, 2, 3, 4);
+  grid-template-areas:
+    "card1 card1 card2 card2"
+    "card1 card1 card2 card2";
+  & article {
+    @include articlemix.dark-article-style;
+    @include animation.zoom-animation;
+    color: colors.$dark-text;
+  }
+  & button {
+    @include buttonmix.buttons-default;
+  }
+  & article:nth-child(1) {
+    grid-area: card1;
+    & h3 {
+      font-size: fonts.$h3-medium;
+    }
+    background-image: url("https://i.postimg.cc/TP4qwwqW/Getty-Images-1255939886-be0a617ba3c14ed19d0200a4022c5bc4.webp"), linear-gradient(rgba(153, 153, 102, 0.95),rgba(153, 153, 102, 0.95));
+    background-blend-mode: overlay;
+    background-size: cover;
+  }
+  & article:nth-child(2) {
+    grid-area: card2;
+    background-image: url("https://i.postimg.cc/HT47W9Sb/shutterstock-1198593766.jpg"), linear-gradient(rgba(246, 241, 241, 0.5),rgba(246, 241, 241, 0.5));
+    background-blend-mode: overlay;
+    background-size: cover;
+    & h3 {
+      font-size: fonts.$h3-medium;
+    }
+  }
+}
+
+.grid-3 {
+  @include gridmix.grid-styling;
+  grid-template-columns: 1.5fr 1.5fr 1.5fr;
+  height: 500px;
+  justify-content: space-around;
+  margin-bottom: 60px;
+  margin-left: 8%;
+  margin-right: 8%;
+  $card: (1, 2, 3);
+  display: grid;
+  grid-template-areas:
+    "card1 card2 card3"
+    "card1 card2 card3";
+  & article {
+    //@include articlemix.article-style;
+  }
+  & article:hover {
+    transform: translateY(-2%);
+  }
+  & article:nth-child(1) {
+    @include articlemix.article-style;
+    grid-area: card1;
+    & h3 {
+      font-size: fonts.$h3-medium;
+    }
+    background-image: url("https://i.postimg.cc/NYHFfxFL/shutterstock-2138331095.jpg");
+    background-size: cover;
+  }
+  & article:nth-child(2) {
+    @include articlemix.dark-article-style;
+    grid-area: card2;
+    background-image: url("https://media.designcafe.com/wp-content/uploads/2020/08/29114351/options-for-seating-in-balcony-interior-design.jpg"), linear-gradient(rgba(246, 224, 100, 0.7),rgba(246, 224, 100, 0.7));
+    background-blend-mode: overlay;
+    background-size: cover;
+    & h3  {
+      font-size: fonts.$h3-medium;
+      color: colors.$dark-text;
+    }
+     & p {
+      color: colors.$dark-text;
+    }
+    & button {
+      @include buttonmix.buttons-dark;
+    }
+  }
+  & article:nth-child(3) {
+    @include articlemix.article-style;
+    grid-area: card3;
+    background-image: url("https://i.postimg.cc/dvVnyW4D/shutterstock-2152234051.jpg");
+    background-size: cover;
+    & h3 {
+      font-size: fonts.$h3-medium;
+      color: colors.$light-text;
+    }
+  }
+}
+
+.earlier__articles {
+  text-align: center;
+  $h3-medium: 2em;
+  padding: 1em;
+}
+.more__articles {
+  border-radius: spaces.$card-border-radius;
+  height: 4em;
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+  margin: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: colors.$light-text;
+  &:hover {
+    background-color: colors.$hover-color;
+  }
+}
+

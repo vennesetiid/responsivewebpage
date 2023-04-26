@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap");
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+}
+header h1 {
+  height: 3.5em;
+  color: #000000;
+}
+header nav a {
+  text-decoration: none;
+  color: #000000;
+  margin-right: 1em;
+}
+header nav a:hover::after {
+  content: "";
+  height: 0.4em;
+  width: 0.4em;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #c1bbb3;
+}
+header nav a:first-child::after {
+  content: "";
+  height: 0.4em;
+  width: 0.4em;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #72c217;
+}
+header nav i {
+  color: #000000;
+}
+
+.grid-1 {
+  border-radius: 2em;
+  display: grid;
+  background-size: cover;
+  background-repeat: no-repeat;
+  grid-template-areas: "card1 card1 card2 card3" "card1 card1 card4 card5";
+}
+.grid-1 article {
+  color: #ebebeb;
+  border-radius: 3em;
+  padding: 1.2em;
+}
+.grid-1 article h3 {
+  font-size: 1em;
+  color: yellow;
+}
+.grid-1 article:hover {
+  transform: translateY(-2%);
+}
+.grid-1 article:nth-child(1) {
+  grid-area: card1;
+  background-image: url("https://i.postimg.cc/NsVKCJMv/shutterstock-2203334379.jpg");
+}
+.grid-1 article:nth-child(1) h3 {
+  font-size: 1.5em;
+}
+.grid-1 article:nth-child(2) {
+  grid-area: card2;
+  background-image: url("https://i.postimg.cc/Fsw-16vKx/bathroom.jpg");
+  background-size: cover;
+}
+.grid-1 article:nth-child(2) h3 {
+  font-size: 1em;
+}
+.grid-1 article:nth-child(3) {
+  grid-area: card3;
+  background-image: url("https://i.postimg.cc/cHDSMsKW/openspace.jpg"), linear-gradient(rgba(219, 158, 37, 0.5), rgba(210, 150, 19, 0.5));
+  opacity: 0.8;
+}
+.grid-1 article:nth-child(3) h3 {
+  font-size: 1em;
+}
+.grid-1 article:nth-child(3) button {
+  border-radius: 1em;
+  border: none;
+  font-size: 0.7em;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+}
+.grid-1 article:nth-child(4) {
+  grid-area: card4;
+  background-image: url("https://i.postimg.cc/3xzQ3bTY/iewek-gnos-hh-Ux08-Pu-Ypc-unsplash-1024x768.jpg"), linear-gradient(rgba(210, 19, 175, 0.5), rgba(210, 19, 175, 0.5));
+  background-size: cover;
+}
+.grid-1 article:nth-child(4) h3 {
+  font-size: 1em;
+}
+.grid-1 article:nth-child(5) {
+  grid-area: card5;
+  background-image: url("https://i.postimg.cc/fLkQfnD4/737d2bb02f06848d227431a07c86239e.jpg"), linear-gradient(rgba(161, 102, 60, 0.402), rgba(228, 210, 45, 0.5019607843));
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+.grid-1 article:nth-child(5) h3 {
+  font-size: 1em;
+}
+.grid-1 article:nth-child(5) button {
+  border-radius: 1em;
+  border: none;
+  font-size: 0.7em;
+  padding: 0.5em;
+  background-color: black;
+  color: white;
+}
+.grid-1 .blog {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  justify-content: center;
+}
+.grid-1 .blog article {
+  background-color: pink;
+  background-position: center;
+  padding: 4em;
+  border-radius: 3em;
+  background-size: 100%;
+  transition: all 0.5s ease-in-out;
+}
+.grid-1 .blog article:hover {
+  background-size: 110%;
+}
+.grid-1 .blog1 {
+  background-image: url("https://i.postimg.cc/dvJ7CHdz/kitchen-design-ideas.jpg");
+  background-size: cover;
+}
+.grid-1 .blog2 {
+  background-image: url("https://i.postimg.cc/xnXcsGBT/shutterstock-1165059121.jpg");
+  background-size: cover;
+}
+.grid-1 .blog3 {
+  background-image: url("https://i.postimg.cc/Qtv3WsdC/shutterstock-437748019.jpg");
+  background-size: cover;
+}
+.grid-1 .blog__content h3 span {
+  font-size: 1.5em;
+  visibility: hidden;
+}
+.grid-1 .blog__content h3:hover span {
+  font-size: 1.5em;
+  visibility: visible;
+}
+.grid-1 .more__articles {
+  border-radius: 3em;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #ebebeb;
+}
+.grid-1 .more__articles:hover {
+  background-color: #c7ec63;
+}
+.grid-1 .grid-2 {
+  border-radius: 2em;
+  display: grid;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-areas: "card1 card1 card2 card2" "card1 card1 card2 card2";
+}
+.grid-1 .grid-2 article {
+  color: #ebebeb;
+  border-radius: 3em;
+  padding: 1.2em;
+}
+.grid-1 .grid-2 article h3 {
+  font-size: 1em;
+  color: yellow;
+}
+.grid-1 .grid-2 article:hover {
+  transform: translateY(-2%);
+}
+.grid-1 .grid-2 article:nth-child(1) {
+  grid-area: card1;
+  background-image: url("https://i.postimg.cc/TP4qwwqW/Getty-Images-1255939886-be0a617ba3c14ed19d0200a4022c5bc4.webp");
+  background-size: cover;
+}
+.grid-1 .grid-2 article:nth-child(1) h3 {
+  font-size: 1.5em;
+}
+.grid-1 .grid-2 article:nth-child(2) {
+  grid-area: card2;
+  background-image: url("https://i.postimg.cc/HT47W9Sb/shutterstock-1198593766.jpg");
+  background-size: cover;
+}
+.grid-1 .grid-2 article:nth-child(2) h3 {
+  font-size: 1em;
+}
+.grid-1 .grid-3 {
+  border-radius: 2em;
+  display: grid;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-areas: "card1 card2 card3" "card1 card2 card3";
+}
+.grid-1 .grid-3 article {
+  color: #ebebeb;
+  border-radius: 3em;
+  padding: 1.2em;
+}
+.grid-1 .grid-3 article h3 {
+  font-size: 1em;
+  color: yellow;
+}
+.grid-1 .grid-3 article:hover {
+  transform: translateY(-2%);
+}
+.grid-1 .grid-3 article:nth-child(1) {
+  grid-area: card1;
+  background-image: url("https://i.postimg.cc/NYHFfxFL/shutterstock-2138331095.jpg");
+  background-size: cover;
+}
+.grid-1 .grid-3 article:nth-child(1) h3 {
+  font-size: 1.5em;
+}
+.grid-1 .grid-3 article:nth-child(2) {
+  grid-area: card2;
+  background-image: url("https://i.postimg.cc/x9RcVTCR/shutterstock-261547313.jpg"), linear-gradient(rgba(237, 237, 81, 0.5), rgba(217, 150, 26, 0.5));
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+.grid-1 .grid-3 article:nth-child(2) h3 {
+  font-size: 1em;
+}
+.grid-1 .grid-3 article:nth-child(3) {
+  grid-area: card3;
+  background-image: url("https://i.postimg.cc/dvVnyW4D/shutterstock-2152234051.jpg");
+  background-size: cover;
+}
+.grid-1 .grid-3 article:nth-child(3) h3 {
+  font-size: 1em;
+}
+
+footer {
+  color: #ebebeb;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+footer .typewriter {
+  font-size: 2.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 4s steps(30) infinite alternate, blinking 0.1s infinite;
+  border-right: 1px solid white;
+  color: #000000;
+  margin: auto;
+}
+footer p {
+  color: black;
+}
+footer form {
+  display: flex;
+  justify-content: center;
+}
+footer form input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+  width: 30%;
+  transition: width 1s linear;
+  text-align: center;
+}
+footer form input:focus {
+  outline: none;
+  width: 50%;
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes blinking {
+  0% {
+    border-right: none;
+  }
+  50% {
+    border-right: 1px solid white;
+  }
+}
+body {
+  margin: 4em;
+  background-color: #ffffff;
+  font-family: "Sora", sans-serif;
+  font-weight: 800;
+  color: black;
+}
+
+button {
+  border-radius: 1em;
+  border: none;
+  font-size: 0.7em;
+  padding: 0.5em;
+  background-color: pink;
+  color: white;
+}/*# sourceMappingURL=style.css.map */

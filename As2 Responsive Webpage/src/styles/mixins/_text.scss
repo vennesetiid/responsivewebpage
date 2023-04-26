@@ -1,0 +1,8 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+
+
+@mixin text-align {
+   text-align: left;
+   margin-top: 6em;
+}

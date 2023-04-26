@@ -1,0 +1,27 @@
+@use "components/header";
+@use "components/main";
+@use "components/footer";
+@use "variables/fonts";
+@use "mixins/nav" as navmix;
+@use "mixins/grid" as gridmix;
+@use "mixins/article" as articlemix;
+@use "mixins/buttons" as buttonmix;
+@use "mixins/animation" as animation;
+@use "mixins/text" as textmix;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap');
+
+body {
+  margin: 4em;
+  background-color: #ffffff;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  color: black;
+
+}
+
+button {
+  @include buttonmix.buttons-default;
+}

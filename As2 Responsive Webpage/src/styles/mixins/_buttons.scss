@@ -1,0 +1,40 @@
+@use "../variables/fonts";
+
+@mixin buttons-default {
+    border-radius: 1em;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: fonts.$btn-text;
+    padding: 0.5em;
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+@mixin buttons-light {
+    border-radius: 1em;
+    border: none;
+    font-size: fonts.$btn-text;
+    padding: 0.5em;
+    background-color: white;
+    color: black;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+@mixin buttons-dark {
+    border: 1px solid black;
+    border-radius: 1em;
+    border: none;
+    font-size: fonts.$btn-text;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
+}
+
+
+

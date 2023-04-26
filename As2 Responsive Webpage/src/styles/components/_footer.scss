@@ -1,0 +1,103 @@
+@use "../mixins/buttons" as buttonmix;
+@use "../mixins/nav" as navmix;
+@use "../variables/colors";
+@use "../shared/images";
+
+
+footer {
+  color: colors.$light-text;
+  & .typewriter {
+    font-size: 2.5em;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(30) infinite alternate, blinking 0s infinite;
+    border-right: 1px solid white;
+    color: colors.$dark-text;
+    margin: auto;
+  }
+  & p {
+    color: black;
+  }
+  & form {
+    display: flex;
+    justify-content: center;
+    & input {
+      background-color: transparent;
+      border: none;
+      font-size: 1em;
+      border-bottom: 2px solid colors.$dark-text;
+      width: 25%;
+      transition: width 1s linear;
+      text-align: center;
+      &:focus {
+        outline: none;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.subscribe__btn {
+@include buttonmix.buttons-dark;
+  margin: 2em;
+  height: 5vh;
+  width: 10vh;
+   &:hover {
+    @include buttonmix.buttons-light;
+    border: 1px solid black;
+  }
+}
+
+.footer__nav {
+  @include navmix.nav-styling;
+  display: flex;
+  justify-content: space-between;
+  margin: 2em;
+  & a {
+    text-decoration: none;
+    color: colors.$dark-text;
+    margin-right: 1em;
+    &:hover::after {
+      @include navmix.nav-styling;
+      background-color: colors.$nonactive-link;
+    }
+  }
+  & a:first-child {
+    &::after {
+      @include navmix.nav-styling;
+      background-color: colors.$active-link;
+    }
+  }
+  & i {
+    color: colors.$dark-text;
+    padding-right: 1em;
+    display: flex;
+    float: right;
+
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blinking {
+  0% {
+    border-right: none;
+  }
+  50% {
+    border-right: 1px solid white;
+  }
+}
+
+.subscribe {
+  margin-top:auto;
+    margin-bottom:auto;
+    text-align:center;
+
+}

@@ -1,0 +1,26 @@
+@use "../variables/colors";
+@use "../variables/fonts";
+@use "../variables/spaces";
+
+@mixin article-style {
+    border-radius: spaces.$card-border-radius;
+    padding: 1.2em;
+  & h2, h3, p, sub {
+    font-size: fonts.$h3-small;
+    color: colors.$light-text;
+    text-shadow: 1px -2px black;
+  }
+}
+
+@mixin dark-article-style {
+  border-radius: spaces.$card-border-radius;
+  padding: 1.2em;
+  text-shadow: -1px -1px rgb(219, 214, 214);
+  & h3 {
+  font-size: fonts.$h3-small;
+  color: colors.$dark-text;
+  }
+  & sub, p{
+    color: colors.$dark-text;
+  }
+}
